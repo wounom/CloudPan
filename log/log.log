@@ -3647,3 +3647,44 @@ Consider defining a bean of type 'com.wounom.cloudpan.service.UserService' in yo
 2023-06-11T14:34:48.311+08:00 DEBUG 18360 --- [http-nio-8080-exec-1] c.w.cloudpan.mapper.UserMapper.findUser  : <==      Total: 1
 2023-06-11T14:38:09.146+08:00  INFO 18360 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
 2023-06-11T14:38:09.150+08:00  INFO 18360 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-06-11T20:23:10.776+08:00  INFO 6080 --- [restartedMain] c.wounom.cloudpan.CloudPanApplication    : Starting CloudPanApplication using Java 20.0.1 with PID 6080 (D:\JAVA\Project\Wounom\CloudPan\target\classes started by Litind in D:\JAVA\Project\Wounom\CloudPan)
+2023-06-11T20:23:10.777+08:00 DEBUG 6080 --- [restartedMain] c.wounom.cloudpan.CloudPanApplication    : Running with Spring Boot v3.1.0, Spring v6.0.9
+2023-06-11T20:23:10.778+08:00  INFO 6080 --- [restartedMain] c.wounom.cloudpan.CloudPanApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-06-11T20:23:10.826+08:00  INFO 6080 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-11T20:23:10.827+08:00  INFO 6080 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-11T20:23:11.892+08:00  INFO 6080 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-06-11T20:23:11.901+08:00  INFO 6080 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-11T20:23:11.902+08:00  INFO 6080 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-06-11T20:23:11.954+08:00  INFO 6080 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-11T20:23:11.954+08:00  INFO 6080 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1127 ms
+2023-06-11T20:23:12.597+08:00  INFO 6080 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-06-11T20:23:12.638+08:00  INFO 6080 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-11T20:23:12.646+08:00  INFO 6080 --- [restartedMain] c.wounom.cloudpan.CloudPanApplication    : Started CloudPanApplication in 2.301 seconds (process running for 3.057)
+2023-06-11T20:25:44.455+08:00  INFO 6080 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-11T20:25:44.456+08:00  INFO 6080 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-11T20:25:44.457+08:00  INFO 6080 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-06-11T20:25:44.539+08:00  INFO 6080 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-06-11T20:25:44.675+08:00 DEBUG 6080 --- [http-nio-8080-exec-1] c.w.c.mapper.EmailMapper.findCode        : ==>  Preparing: select * from email where email = ?
+2023-06-11T20:25:44.691+08:00 DEBUG 6080 --- [http-nio-8080-exec-1] c.w.c.mapper.EmailMapper.findCode        : ==> Parameters: 2773570032@qq.com(String)
+2023-06-11T20:25:44.710+08:00 DEBUG 6080 --- [http-nio-8080-exec-1] c.w.c.mapper.EmailMapper.findCode        : <==      Total: 1
+2023-06-11T20:25:45.423+08:00 DEBUG 6080 --- [http-nio-8080-exec-1] c.w.c.mapper.EmailMapper.updateCode      : ==>  Preparing: update email set code = ?, activeTime = ? where email = ?
+2023-06-11T20:25:45.424+08:00 DEBUG 6080 --- [http-nio-8080-exec-1] c.w.c.mapper.EmailMapper.updateCode      : ==> Parameters: 307180(String), 2023-06-11T20:35:45.422369100(LocalDateTime), 2773570032@qq.com(String)
+2023-06-11T20:25:45.429+08:00 DEBUG 6080 --- [http-nio-8080-exec-1] c.w.c.mapper.EmailMapper.updateCode      : <==    Updates: 1
+2023-06-11T20:26:12.061+08:00 DEBUG 6080 --- [http-nio-8080-exec-3] c.w.cloudpan.mapper.UserMapper.findUser  : ==>  Preparing: select * from user where email = ?
+2023-06-11T20:26:12.062+08:00 DEBUG 6080 --- [http-nio-8080-exec-3] c.w.cloudpan.mapper.UserMapper.findUser  : ==> Parameters: 2773570032@qq.com(String)
+2023-06-11T20:26:12.067+08:00 DEBUG 6080 --- [http-nio-8080-exec-3] c.w.cloudpan.mapper.UserMapper.findUser  : <==      Total: 1
+2023-06-11T20:26:12.067+08:00 DEBUG 6080 --- [http-nio-8080-exec-3] c.w.cloudpan.mapper.EmailMapper.getCode  : ==>  Preparing: select code,activeTime from email where email = ?
+2023-06-11T20:26:12.068+08:00 DEBUG 6080 --- [http-nio-8080-exec-3] c.w.cloudpan.mapper.EmailMapper.getCode  : ==> Parameters: 2773570032@qq.com(String)
+2023-06-11T20:26:12.070+08:00 DEBUG 6080 --- [http-nio-8080-exec-3] c.w.cloudpan.mapper.EmailMapper.getCode  : <==      Total: 1
+2023-06-11T20:26:12.081+08:00 DEBUG 6080 --- [http-nio-8080-exec-3] c.w.cloudpan.mapper.UserMapper.resetPw   : ==>  Preparing: update user set salt=?,password=? where email=?
+2023-06-11T20:26:12.081+08:00 DEBUG 6080 --- [http-nio-8080-exec-3] c.w.cloudpan.mapper.UserMapper.resetPw   : ==> Parameters: 0n29jv(String), 5f99dac5f2f16a4055c0bea5b59a2bab(String), 2773570032@qq.com(String)
+2023-06-11T20:26:12.086+08:00 DEBUG 6080 --- [http-nio-8080-exec-3] c.w.cloudpan.mapper.UserMapper.resetPw   : <==    Updates: 1
+2023-06-11T20:26:24.187+08:00 DEBUG 6080 --- [http-nio-8080-exec-5] c.w.cloudpan.mapper.UserMapper.findUser  : ==>  Preparing: select * from user where email = ?
+2023-06-11T20:26:24.187+08:00 DEBUG 6080 --- [http-nio-8080-exec-5] c.w.cloudpan.mapper.UserMapper.findUser  : ==> Parameters: 2773570032@qq.com(String)
+2023-06-11T20:26:24.189+08:00 DEBUG 6080 --- [http-nio-8080-exec-5] c.w.cloudpan.mapper.UserMapper.findUser  : <==      Total: 1
+2023-06-11T20:26:24.189+08:00 DEBUG 6080 --- [http-nio-8080-exec-5] c.w.cloudpan.mapper.EmailMapper.getCode  : ==>  Preparing: select code,activeTime from email where email = ?
+2023-06-11T20:26:24.189+08:00 DEBUG 6080 --- [http-nio-8080-exec-5] c.w.cloudpan.mapper.EmailMapper.getCode  : ==> Parameters: 2773570032@qq.com(String)
+2023-06-11T20:26:24.191+08:00 DEBUG 6080 --- [http-nio-8080-exec-5] c.w.cloudpan.mapper.EmailMapper.getCode  : <==      Total: 1
+2023-06-11T20:26:52.474+08:00 DEBUG 6080 --- [http-nio-8080-exec-8] c.w.cloudpan.mapper.UserMapper.findUser  : ==>  Preparing: select * from user where email = ?
+2023-06-11T20:26:52.474+08:00 DEBUG 6080 --- [http-nio-8080-exec-8] c.w.cloudpan.mapper.UserMapper.findUser  : ==> Parameters: 2773570032@qq.com(String)
+2023-06-11T20:26:52.476+08:00 DEBUG 6080 --- [http-nio-8080-exec-8] c.w.cloudpan.mapper.UserMapper.findUser  : <==      Total: 1

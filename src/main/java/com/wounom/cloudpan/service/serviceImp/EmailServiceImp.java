@@ -40,9 +40,7 @@ public class EmailServiceImp implements EmailService {
         try {
             //查询数据库中是否已有该数据
             Email emailCompare = emailMapper.findCode(email);
-
             String code = EmailUtil.CreateCode();
-            System.out.println(code);
             sendEmail(email,code,i);//发送邮件
             //将验证码存入数据库
             LocalDateTime activeTime = LocalDateTime.now().plusMinutes(10);//验证码有效时间为10分钟

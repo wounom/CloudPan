@@ -7,7 +7,10 @@
     </select>
     
     <insert id="insertUser">
-        insert into user(username,email,salt,password)
-        values (#{userName},#{email},#{salt},#{password})
+        insert into user(username,email,salt,password) values(#{userName},#{email},#{salt},#{password})
     </insert>
+
+    <update id="resetPw">
+        update user set salt=#{salt},password=#{password} where email=#{email}
+    </update>
 </mapper>

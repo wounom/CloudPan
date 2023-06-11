@@ -3,6 +3,8 @@ package com.wounom.cloudpan.service;
 import com.wounom.cloudpan.common.Result;
 import com.wounom.cloudpan.entity.User;
 
+import java.util.Map;
+
 /**
  * @author Litind
  * @version 1.0
@@ -12,4 +14,6 @@ public interface UserService {
     Result<?> regist(User user);
 
     Result<?> login(User user);
+
+    Result<?> resetPw(User user);
 }

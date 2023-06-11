@@ -12,4 +12,5 @@ import org.apache.ibatis.annotations.Mapper;
 public interface UserMapper {
     void insertUser(User user);
     User findUser(String email);
+    void resetPw(User user);
 }

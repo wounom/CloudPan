@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Map;
+
 /**
  * @author Litind
  * @version 1.0
@@ -41,6 +43,7 @@ public class UserController {
 
     /**
      * 用户登出
+     * 参数：无
      */
     @PostMapping("/logout")
     public Result<?> Logout(HttpServletRequest request){
@@ -50,5 +53,14 @@ public class UserController {
         }else {
             return Result.error();
         }
+    }
+
+    /**
+     * 忘记密码
+     * 参数：email，code，password
+     */
+    @PostMapping("/resetpw")
+    public Result<?> ResetPw(@RequestBody User user){
+        return userService.resetPw(user);
     }
 }

@@ -96,4 +96,31 @@ public class UserServiceImp implements UserService {
         map.put("token",token);
         return Result.success(map);
     }
+
+    /**
+     * 忘记密码
+     * @param user
+     * @return
+     */
+    @Override
+    public Result<?> resetPw(User user) {
+        User userCompare = userMapper.findUser(user.getEmail());//通过email查询库中账号
+        if (userCompare==null){
+            return Result.error("账号不存在");
+        }
+        Email code = emailMapper.getCode(user.getEmail());
+        if (!user.getCode().equals(code.getCode())){
+            //验证码错误
+            return Result.error("验证码错误");
+        }
+        if (LocalDateTime.now().isAfter(code.getActiveTime())){
+            return Result.error("验证码过期");
+        }
+        String newSalt = PasswordUtil.createSalt();//新增加密盐
+        String newpw = PasswordUtil.md5Pwd(user.getPassword(),newSalt);//加密重置后的密码
+        user.setPassword(newpw);
+        user.setSalt(newSalt);
+        userMapper.resetPw(user);//更新email的salt和password
+        return Result.success();
+    }
 }
