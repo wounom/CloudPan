@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.164.128:3306/CloudPan?characterEncoding=UTF-8&useUnicode=true&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: like@2002
+  mail: # 邮件配置
+    username: litind@163.com
+    password: APYDOSTDPDUOEEHQ
+    host: smtp.163.com
+    default-encoding: UTF-8
+
+# 日志文件
+logging:
+  file:
+    name: log/log.log
+  level:
+    root: info
+    com.wounom.cloudpan: debug
+server:
+  port: 8080
