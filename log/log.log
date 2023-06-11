@@ -3688,3 +3688,61 @@ Consider defining a bean of type 'com.wounom.cloudpan.service.UserService' in yo
 2023-06-11T20:26:52.474+08:00 DEBUG 6080 --- [http-nio-8080-exec-8] c.w.cloudpan.mapper.UserMapper.findUser  : ==>  Preparing: select * from user where email = ?
 2023-06-11T20:26:52.474+08:00 DEBUG 6080 --- [http-nio-8080-exec-8] c.w.cloudpan.mapper.UserMapper.findUser  : ==> Parameters: 2773570032@qq.com(String)
 2023-06-11T20:26:52.476+08:00 DEBUG 6080 --- [http-nio-8080-exec-8] c.w.cloudpan.mapper.UserMapper.findUser  : <==      Total: 1
+2023-06-11T20:30:08.870+08:00  INFO 6080 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 3 class path changes (0 additions, 3 deletions, 0 modifications)
+2023-06-11T20:30:08.891+08:00  INFO 6080 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-06-11T20:30:08.893+08:00  INFO 6080 --- [Thread-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-06-11T20:30:08.970+08:00  WARN 6080 --- [Thread-5] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [Druid-ConnectionPool-Create-726363527] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.park(LockSupport.java:371)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:519)
+ java.base/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3780)
+ java.base/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3725)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1707)
+ com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2885)
+2023-06-11T20:30:08.971+08:00  WARN 6080 --- [Thread-5] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [Druid-ConnectionPool-Destroy-726363527] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.lang.Thread.sleep0(Native Method)
+ java.base/java.lang.Thread.sleep(Thread.java:484)
+ com.alibaba.druid.pool.DruidDataSource$DestroyConnectionThread.run(DruidDataSource.java:2984)
+2023-06-11T20:30:08.979+08:00  INFO 6080 --- [Thread-5] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-06-11T20:30:08.989+08:00  INFO 6080 --- [Thread-5] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-06-11T20:30:09.094+08:00  INFO 6080 --- [restartedMain] c.wounom.cloudpan.CloudPanApplication    : Starting CloudPanApplication using Java 20.0.1 with PID 6080 (D:\JAVA\Project\Wounom\CloudPan\target\classes started by Litind in D:\JAVA\Project\Wounom\CloudPan)
+2023-06-11T20:30:09.094+08:00 DEBUG 6080 --- [restartedMain] c.wounom.cloudpan.CloudPanApplication    : Running with Spring Boot v3.1.0, Spring v6.0.9
+2023-06-11T20:30:09.094+08:00  INFO 6080 --- [restartedMain] c.wounom.cloudpan.CloudPanApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-06-11T20:30:09.440+08:00  INFO 6080 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-06-11T20:30:09.440+08:00  INFO 6080 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-11T20:30:09.440+08:00  INFO 6080 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-06-11T20:30:09.456+08:00  INFO 6080 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-11T20:30:09.456+08:00  INFO 6080 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 357 ms
+2023-06-11T20:30:09.467+08:00  WARN 6080 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'emailController': Injection of resource dependencies failed
+2023-06-11T20:30:09.467+08:00  INFO 6080 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-06-11T20:30:09.474+08:00  INFO 6080 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-06-11T20:30:09.514+08:00 ERROR 6080 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean of type 'com.wounom.cloudpan.service.EmailService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.wounom.cloudpan.service.EmailService' in your configuration.
+
+2023-06-11T20:30:10.951+08:00  INFO 6080 --- [restartedMain] c.wounom.cloudpan.CloudPanApplication    : Starting CloudPanApplication using Java 20.0.1 with PID 6080 (D:\JAVA\Project\Wounom\CloudPan\target\classes started by Litind in D:\JAVA\Project\Wounom\CloudPan)
+2023-06-11T20:30:10.952+08:00 DEBUG 6080 --- [restartedMain] c.wounom.cloudpan.CloudPanApplication    : Running with Spring Boot v3.1.0, Spring v6.0.9
+2023-06-11T20:30:10.952+08:00  INFO 6080 --- [restartedMain] c.wounom.cloudpan.CloudPanApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-06-11T20:30:11.163+08:00  INFO 6080 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-06-11T20:30:11.164+08:00  INFO 6080 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-11T20:30:11.164+08:00  INFO 6080 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-06-11T20:30:11.180+08:00  INFO 6080 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-06-11T20:30:11.180+08:00  INFO 6080 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 226 ms
+2023-06-11T20:30:11.336+08:00  INFO 6080 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-06-11T20:30:11.349+08:00  INFO 6080 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-11T20:30:11.353+08:00  INFO 6080 --- [restartedMain] c.wounom.cloudpan.CloudPanApplication    : Started CloudPanApplication in 0.423 seconds (process running for 421.764)
+2023-06-11T20:30:11.354+08:00  INFO 6080 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-06-11T20:31:46.274+08:00  INFO 6080 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
