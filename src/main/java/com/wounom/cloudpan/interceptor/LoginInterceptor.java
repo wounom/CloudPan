@@ -30,7 +30,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         response.setContentType("text/html;charset=UTF-8");
         response.getWriter().print(result);
         return false;*/
-        if ("OPTIONS".equals(request.getMethod())) {//通过判断请求的方法，判断此次是否是预检请求
+        if ("OPTIONS".equals(request.getMethod())) {//通过判断请求的方法，判断此次是否是预检请求.
             response.setStatus(HttpStatus.NO_CONTENT.value()); //HttpStatus.SC_NO_CONTENT = 204
             response.setHeader("Access-Control-Allow-Methods", "POST, GET, DELETE, OPTIONS, DELETE");//当判定为预检请求后，设定允许请求的方法
             response.setHeader("Access-Control-Allow-Headers", "Content-Type, x-requested-with, Token"); //当判定为预检请求后，设定允许请求的头部类型
