@@ -4,12 +4,10 @@ import com.wounom.cloudpan.common.Result;
 import com.wounom.cloudpan.entity.User;
 import com.wounom.cloudpan.service.UserService;
 import com.wounom.cloudpan.utils.TokenUtil;
+import jakarta.annotation.Generated;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -20,9 +18,20 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/user")
+@CrossOrigin
 public class UserController {
     @Resource
     private UserService userService;
+    /**
+     * 测试用
+     */
+    @GetMapping("/test")
+    public Result<?> test(HttpServletRequest request){
+        String token = request.getHeader("token");
+        User user = TokenUtil.getUser(token);
+        return Result.success(user);
+    }
+
     /**
      * 用户注册
      * 参数: email，password，code
